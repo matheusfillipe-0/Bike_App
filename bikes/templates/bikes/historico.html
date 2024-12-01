@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Locações</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/historico.css' %}">
+    
+</head>
+<body>
+    <h1>Histórico de Locações</h1>
+ 
+
+    <table>
+        <thead>
+            <tr>
+                <th>Data da Locação</th>
+                <th>Data da Entrega</th>
+                <th>Bicicleta</th>
+                <th>Estação</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for locacao in locacoes %}
+            <tr>
+                <td>{{ locacao.data_locacao }}</td>
+                <td>{{ locacao.data_devolucao }}</td>
+                <td>{{ locacao.bicicleta.modelo }}</td>
+                <td>{{ locacao.bicicleta.estacao.nome }}</td>
+                <td>{{ locacao.valor|default:"N/A" }}</td>
+                 
+                 
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

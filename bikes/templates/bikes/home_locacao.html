@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locação de Bicicleta</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home_locacao.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&family=Lexend:wght@400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>Estação de Reserva - Em Locação</h1>
+    <div id="map"></div>
+ 
+    <div class="overlay-card">
+        <h2>Devolva em uma das estações</h2>
+        <ul class="estacoes-list">
+            {% for estacao in estacoes %}
+            <li>{{ estacao.nome }}</li>
+            {% endfor %}
+        </ul>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Devolver bicicleta</button>
+        </form>
+    </div>
+
+    <div class="status-container">
+        <div class="status-bar">
+            <span class="status-text">Status: Bicicleta em locação</span>
+        </div>
+    </div>
+ 
+    <script>
+         
+        const map = L.map('map').setView([-9.6658, -35.7351], 15);  
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        const bikeIcon = L.icon({
+            iconUrl: 'https://pic.surf/glo',
+            iconSize: [40, 40],
+            iconAnchor: [20, 40]
+        });
+
+        const estacoes = JSON.parse('{{ estacoes_json|escapejs }}');
+
+        estacoes.forEach(estacao => {
+            const marker = L.marker([estacao.latitude, estacao.longitude], { icon: bikeIcon }).addTo(map);
+
+            marker.bindPopup(` 
+                <b>Estação: </b>${estacao.nome}<br>
+                <a href="/estacao/${estacao.id}/">Ver detalhes da estação ${estacao.nome}</a>
+            `);
+        });
+
+         s
+        const menuContainer = document.querySelector('.menu-container');
+        const menuToggle = document.querySelector('.menu-toggle');
+
+        menuToggle.addEventListener('click', () => {
+            menuContainer.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!menuContainer.contains(event.target)) {
+                menuContainer.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+
+</html>

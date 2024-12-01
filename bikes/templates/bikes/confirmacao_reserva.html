@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação da Reserva</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/confirmacao_reserva.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Reserva Confirmada</h1>
+        {% csrf_token %}
+        {% if locacao %}
+        <div class="locacao-info">
+            <h2>Detalhes da Locação</h2>
+            <p><strong>Modelo:</strong> {{ locacao.bicicleta.modelo }}</p>
+            <p><strong>Identificador:</strong> {{ locacao.bicicleta.id }}</p>
+            <p><strong>Data de Retirada:</strong> {{ locacao.data_locacao|date:"d/m/Y H:i" }}</p>
+             
+             
+            {% if locacao.pagamento %}
+                <p><strong>Forma de Pagamento:</strong> {{ locacao.pagamento.forma_pagamento }}</p>
+                
+                
+            {% else %}
+                <p><strong>Pagamento:</strong> Não foi realizado pagamento.</p>
+            {% endif %}
+            
+            <p><strong>Status:</strong> {{ locacao.get_status_display }}</p>
+        </div>
+        {% else %}
+        <p>Não foi encontrada uma locação para esta bicicleta.</p>
+        {% endif %}
+         <a href="{% url 'home_locacao' id_bicicleta=bicicleta.id %}">Home Locação</a>
+
+    </div>
+</body>
+</html>

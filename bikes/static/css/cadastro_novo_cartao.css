@@ -1,0 +1,145 @@
+ 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #cfced1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;  
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+ 
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+ 
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+ 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;  
+}
+
+
+label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+}
+
+
+
+input, select {
+    width: 350px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    border-color: #4f4caf;
+}
+
+
+
+input:focus, select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+
+
+button {
+    width: 100%;   
+    max-width: 200px;  
+    padding: 12px;
+    background-color: #4f4caf;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; 
+    text-align: center;   
+}
+
+
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+p {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+ 
+a {
+    color: #4f4caf;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+.errorlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: #d9534f;
+    font-size: 0.9rem;
+}
+
+.errorlist li {
+    margin-bottom: 5px;
+}
+
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+
+form button {
+    margin-left: auto;
+    margin-right: auto;  
+}

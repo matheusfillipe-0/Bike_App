@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/configuracoes.css' %}">
+</head>
+
+<body>
+     
+    <div class="container">
+        <div class="config-card">
+            <h1>Configurações</h1>
+
+            <div class="config-section">
+                <h2>Alterar Informações :</h2>
+                <ul class="config-list">
+                    <li>
+                        <strong class="def">Nome:</strong> <a href="{% url 'modificar_nome' %}">Alterar</a>
+                    </li>
+                    <li>
+                        <strong class="def">Email:</strong> <a href="{% url 'modificar_email' %}">Alterar</a>
+                    </li>
+                    <li>
+                        <strong class="def">Senha:</strong> <a href="{% url 'alterar_senha' %}">Alterar</a>
+                    </li>
+                    
+                </ul>
+            </div>
+ 
+ 
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

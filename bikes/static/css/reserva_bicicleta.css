@@ -1,0 +1,116 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    height: 100%;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    text-align: center;
+    color: #4f4caf;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #4f4caf;
+    background-color: #fff;
+}
+
+.form-group button {
+    background-color: #4f4caf;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #f9f9f9;
+    color: #4f4caf;
+}
+
+.pagamento-opcao {
+    display: none;
+}
+
+.link-cadastrar-cartao {
+    color: #4f4caf;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-cadastrar-cartao:hover {
+    text-decoration: underline;
+}
+
+.form-group .btn-secondary {
+    background-color: #6c757d;
+    margin-top: 10px;
+}
+
+.form-group .btn-secondary:hover {
+    background-color: #5a6268;
+}
+ 
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+}

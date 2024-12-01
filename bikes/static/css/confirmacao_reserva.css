@@ -1,0 +1,122 @@
+ 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #cfced1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+}
+ 
+.bicicleta-info,
+.locacao-info {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bicicleta-info {
+    background-color: #e9f7fa;
+    border-left: 6px solid #00bcd4;
+}
+
+.locacao-info {
+    background-color: #fff9c4;
+    border-left: 6px solid #4f4caf;
+}
+ 
+.bicicleta-info p,
+.locacao-info p {
+    font-size: 1rem;
+    color: #333;
+    margin: 8px 0;
+}
+ 
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4f4caf;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #1a194e;
+}
+ 
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+ul.error-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul.error-list li {
+    margin-bottom: 10px;
+}
+
+
+a {
+    color: #4f4caf;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .bicicleta-info p,
+    .locacao-info p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}

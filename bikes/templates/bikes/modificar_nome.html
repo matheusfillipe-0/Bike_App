@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Nome</title>
+    <link rel="stylesheet" href="style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/modificar.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-card">
+            <h1>Alterar Nome</h1>
+            <form method="POST" action="{% url 'atualizar_nome' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="novo_nome">Novo Nome:</label>
+                    <input type="text" name="novo_nome" id="novo_nome" value="{{ user.usuario.nome }}">
+                </div>
+                <div class="btn-container">
+                    <button class="btn-submit" type="submit">Atualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

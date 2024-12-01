@@ -1,0 +1,133 @@
+ 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+
+.btn-voltar {
+    background-color: #4f4caf;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px;
+}
+
+.btn-voltar:hover {
+    background-color: #1a194e;
+    transform: scale(1.05);
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.def{
+     color: #4f4caf;
+}
+
+.config-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #4f4caf;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.3rem;
+    color: #4f4caf;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.config-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.config-list li {
+    font-size: 1rem;
+    margin: 12px 0;
+}
+
+.config-list a {
+    color: #4f4caf;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.config-list a:hover {
+    color: #1abc9c;
+}
+
+.config-list strong {
+    font-weight: bold;
+}
+ 
+.btn-logout {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #c0392b;
+}
+ 
+.config-section {
+    background: #ecf0f1;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+ 
+.config-card {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+ 
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .config-card {
+        padding: 20px;
+    }
+
+    .btn-logout {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
+
+

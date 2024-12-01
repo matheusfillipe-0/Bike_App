@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Estação - {{ estacao.nome }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/detalhes_estacao.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+   
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+
+            
+            <h2>Detalhes da Estação: {{ estacao.nome }}</h2>
+            
+            <h3>Lista de Bicicletas:</h3>
+            <ul class="bicicletas-lista">
+                {% for bicicleta in bicicletas %}
+                    <li class="bicicleta-item">
+                        <b>Identificador :</b> {{ bicicleta.id }} 
+                        <b>Status:</b> {{ bicicleta.status }} 
+                        <b>Modelo:</b> {{ bicicleta.modelo }} 
+                        <b>Ano:</b> {{ bicicleta.ano_fabricacao }}
+                         
+                        {% if bicicleta.status == 'disponivel' %}
+                        <a href="{% url 'reserva_bicicleta' bicicleta.id %}" class="btn-reservar">Reservar Bicicleta</a>
+                        {% else %}
+                            <span>Indisponível</span>
+                        {% endif %}
+                    </li>
+                {% empty %}
+                    <li>Nenhuma bicicleta disponível nesta estação.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

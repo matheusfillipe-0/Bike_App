@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuário</title>
+    <link rel="stylesheet" href="style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="config-card">
+            
+
+            <div class="config-section">
+                <h2>Informações Pessoais</h2>
+                <ul class="config-list">
+                    <li><strong class="def">Nome:</strong> {{ usuario.nome }}</li>
+                    <li><strong class="def">CPF:</strong> {{ usuario.cpf }}</li>
+                    <li><strong class="def">Data de Nascimento:</strong> {{ usuario.data_nascimento }}</li>
+                    <li><strong class="def">CEP:</strong> {{ usuario.cep }}</li>
+                    <li><strong class="def">Logradouro:</strong> {{ usuario.logradouro }}</li>
+                    <li><strong class="def">Número:</strong> {{ usuario.numero }}</li>
+                    <li><strong class="def">Bairro:</strong> {{ usuario.bairro }}</li>
+                    <li><strong class="def">Cidade:</strong> {{ usuario.cidade }}</li>
+                    <li><strong class="def">Estado:</strong> {{ usuario.estado }}</li>
+                    <li><strong class="def">Email:</strong> {{ usuario.email }}</li>
+                </ul>
+            </div>
+
+            <div class="config-section">
+                <h2>Cartões Cadastrados</h2>
+                <ul class="config-list">
+                    {% if cartao_parcial %}
+                    <li><strong>Cartão:</strong> {{ cartao_parcial }}******</li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div class="config-section">
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-logout">Sair</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
